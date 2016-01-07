@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JRTLeftSliderController">
+            <connections>
+                <outlet property="LeadingPivotViewConstraint" destination="qa2-p5-dee" id="LwR-GA-34a"/>
+                <outlet property="leadingMainContainerConstraint" destination="IgJ-KL-eyF" id="cew-TH-8iI"/>
+                <outlet property="leftContainerView" destination="BH2-lX-VeN" id="WdW-J9-zmI"/>
+                <outlet property="mainContainerView" destination="YY6-Vd-tLo" id="8hn-vr-5z6"/>
+                <outlet property="pivotView" destination="ju5-PT-eDA" id="oUh-kv-SST"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="widthPivotViewConstraint" destination="8uJ-vM-7Ht" id="4iN-Vk-CPO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BH2-lX-VeN">
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="270" id="T3H-Ui-PPM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY6-Vd-tLo">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ju5-PT-eDA">
+                    <rect key="frame" x="0.0" y="0.0" width="8" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="8uJ-vM-7Ht"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YY6-Vd-tLo" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="20f-TA-J6G"/>
+                <constraint firstItem="BH2-lX-VeN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DsT-aG-xod"/>
+                <constraint firstItem="YY6-Vd-tLo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IgJ-KL-eyF"/>
+                <constraint firstItem="YY6-Vd-tLo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="M9R-0i-9af"/>
+                <constraint firstAttribute="bottom" secondItem="BH2-lX-VeN" secondAttribute="bottom" id="UKI-t4-sEC"/>
+                <constraint firstItem="ju5-PT-eDA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WnS-vQ-Syp"/>
+                <constraint firstAttribute="bottom" secondItem="ju5-PT-eDA" secondAttribute="bottom" id="en8-NX-gDx"/>
+                <constraint firstItem="YY6-Vd-tLo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="k6p-FP-2RO"/>
+                <constraint firstItem="ju5-PT-eDA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qa2-p5-dee"/>
+                <constraint firstItem="BH2-lX-VeN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yeX-rF-cBk"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
