@@ -22,11 +22,11 @@
 #import <UIKit/UIKit.h>
 
 @interface JRTLeftSliderController : UIViewController
-@property (nonatomic, strong)UIViewController *mainViewController;
-@property (nonatomic, strong)UIViewController *leftViewController;
+@property (nonatomic, strong) UIViewController *mainViewController;
+@property (nonatomic, strong) UIViewController *leftViewController;
 
-@property (nonatomic)BOOL interactiveShowGestureRecognizerEnable;
-@property (nonatomic, readonly)BOOL isLeftContainerHidden;
+@property (nonatomic) BOOL interactiveShowGestureRecognizerEnable;
+@property (nonatomic, readonly) BOOL isLeftContainerHidden;
 
 - (void)showLeftContainer:(BOOL)show animated:(BOOL)animated;
 

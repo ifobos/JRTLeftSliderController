@@ -16,27 +16,22 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    JRTLeftSliderController *leftSliderController = [JRTLeftSliderController new];
+    leftSliderController.leftViewController = [UIViewController new];
+    leftSliderController.leftViewController.view.backgroundColor = [UIColor blueColor];
+    leftSliderController.mainViewController = [UIViewController new];
+    leftSliderController.mainViewController.view.backgroundColor = [UIColor redColor];
+    leftSliderController.interactiveShowGestureRecognizerEnable = YES;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0e9 * 3), dispatch_get_main_queue(), ^(void) {
+        [leftSliderController showLeftContainer:YES animated:YES];
+    });
     
     
-    
-    JRTLeftSliderController *leftSliderController                   = [JRTLeftSliderController new];
-    leftSliderController.leftViewController                         = [UIViewController new];
-    leftSliderController.leftViewController.view.backgroundColor    = [UIColor blueColor];
-    leftSliderController.mainViewController                         = [UIViewController new];
-    leftSliderController.mainViewController.view.backgroundColor    = [UIColor redColor];
-    leftSliderController.interactiveShowGestureRecognizerEnable     = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0e9 * 3), dispatch_get_main_queue(), ^(void)
-                   {
-                       [leftSliderController showLeftContainer:YES animated:YES];
-                   });
-    
-    
-    self.window                     = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController  = leftSliderController;
-    self.window.backgroundColor     = [UIColor whiteColor];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = leftSliderController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

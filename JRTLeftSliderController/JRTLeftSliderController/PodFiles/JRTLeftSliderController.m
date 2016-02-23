@@ -38,23 +38,18 @@ CGFloat const kLeftContentWidth = 270;
 
 #pragma mark - Class
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         [self defaultParameters];
     }
     return(self);
 }
 
-
 #pragma mark - Getters
 
-- (UIViewController *)mainViewController
-{
-    if (!_mainViewController)
-    {
+- (UIViewController *)mainViewController {
+    if (!_mainViewController) {
         @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                            reason:[NSString stringWithFormat:@"%@, should not be empty. ", NSStringFromSelector(_cmd)]
                                          userInfo:nil];
@@ -62,10 +57,8 @@ CGFloat const kLeftContentWidth = 270;
     return _mainViewController;
 }
 
-- (UIViewController *)leftViewController
-{
-    if (!_leftViewController)
-    {
+- (UIViewController *)leftViewController {
+    if (!_leftViewController) {
         @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                            reason:[NSString stringWithFormat:@"%@, should not be empty. ", NSStringFromSelector(_cmd)]
                                          userInfo:nil];
@@ -73,23 +66,20 @@ CGFloat const kLeftContentWidth = 270;
     return _leftViewController;
 }
 
-- (BOOL)isLeftContainerHidden
-{
+- (BOOL)isLeftContainerHidden {
     return (self.mainContainerView.frame.origin.x == 0);
 }
 
 #pragma mark - Setters
 
-- (void)setInteractiveShowGestureRecognizerEnable:(BOOL)InteractiveShowGestureRecognizerEnable
-{
+- (void)setInteractiveShowGestureRecognizerEnable:(BOOL)InteractiveShowGestureRecognizerEnable {
     _interactiveShowGestureRecognizerEnable = InteractiveShowGestureRecognizerEnable;
     [self updatePivotStatus];
 }
 
 #pragma mark - View Controller
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpContainers];
     [self setUpShowGesture];
@@ -97,14 +87,12 @@ CGFloat const kLeftContentWidth = 270;
 
 #pragma mark - SetUp
 
-- (void)setUpContainers
-{
+- (void)setUpContainers {
     [self addChildViewController:self.mainViewController toContainerView:self.mainContainerView];
     [self addChildViewController:self.leftViewController toContainerView:self.leftContainerView];
 }
 
-- (void)setUpShowGesture
-{
+- (void)setUpShowGesture {
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(slideMainContainerView:)];
     [panRecognizer setMinimumNumberOfTouches:1];
     [panRecognizer setMaximumNumberOfTouches:1];
@@ -117,92 +105,79 @@ CGFloat const kLeftContentWidth = 270;
 
 #pragma mark - Helpers
 
-- (void)addChildViewController:(UIViewController *)childController toContainerView:(UIView *)containerView
-{
+- (void)addChildViewController:(UIViewController *)childController toContainerView:(UIView *)containerView {
     [self addChildViewController:childController];
     childController.view.frame = containerView.bounds;
     [containerView addSubview:childController.view];
     [childController didMoveToParentViewController:self];
 }
 
-- (void)showLeftContainer:(BOOL)show animated:(BOOL)animated
-{
-    void (^showBlock) (BOOL displace) = ^void(BOOL displace)
+- (void)showLeftContainer:(BOOL)show animated:(BOOL)animated {
+    void (^showBlock) (BOOL displace) = ^void (BOOL displace)
     {
-        CGFloat xPosition               = 0;
-        CGFloat pivotWidth              = 8;
-        if (displace)
-        {
-            xPosition                   = kLeftContentWidth;
-            pivotWidth                  = 44;
+        CGFloat xPosition = 0;
+        CGFloat pivotWidth = 8;
+        if (displace) {
+            xPosition = kLeftContentWidth;
+            pivotWidth = 44;
         }
         
-        self.leadingMainContainerConstraint.constant    = xPosition;
-        self.LeadingPivotViewConstraint.constant        = xPosition;
-        self.widthPivotViewConstraint.constant          = pivotWidth;
+        self.leadingMainContainerConstraint.constant = xPosition;
+        self.LeadingPivotViewConstraint.constant = xPosition;
+        self.widthPivotViewConstraint.constant = pivotWidth;
         
         [self.mainContainerView layoutIfNeeded];
         [self.pivotView layoutIfNeeded];
     };
     
-    if (animated)
-    {
-       [UIView animateWithDuration:0.2 animations:^
-                                    {
-                                        showBlock(show);
-                                    }];
+    if (animated) {
+        [UIView animateWithDuration:0.2 animations:^
+        {
+            showBlock(show);
+        }];
     }
-    else
-    {
+    else {
         showBlock(show);
     }
 }
 
-- (void)slideMainContainerView:(id)sender
-{
+- (void)slideMainContainerView:(id)sender {
     static CGFloat firstCenterX;
     static CGFloat minCenterX;
     static CGFloat maxCenterX;
     static CGFloat midCenterX;
-
     
-    CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:[[sender view] superview]];
     
-    if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan)
-    {
-        minCenterX      = self.view.frame.size.width/2;
-        maxCenterX      = minCenterX + self.leftContainerView.frame.size.width;
-        midCenterX      = minCenterX + ((maxCenterX - minCenterX)/2);
-        firstCenterX    = [self.mainContainerView center].x;
+    CGPoint translatedPoint = [(UIPanGestureRecognizer *)sender translationInView:[[sender view] superview]];
+    
+    if ([(UIPanGestureRecognizer *)sender state] == UIGestureRecognizerStateBegan) {
+        minCenterX = self.view.frame.size.width / 2;
+        maxCenterX = minCenterX + self.leftContainerView.frame.size.width;
+        midCenterX = minCenterX + ((maxCenterX - minCenterX) / 2);
+        firstCenterX = [self.mainContainerView center].x;
     }
     
     translatedPoint = CGPointMake(firstCenterX + translatedPoint.x, [[sender view] center].y);
-    if (translatedPoint.x >= minCenterX && translatedPoint.x <= maxCenterX)
-    {
+    if (translatedPoint.x >= minCenterX && translatedPoint.x <= maxCenterX) {
         [self.mainContainerView setCenter:translatedPoint];
-        
     }
-    if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded)
-    {
+    if ([(UIPanGestureRecognizer *)sender state] == UIGestureRecognizerStateEnded) {
         [self showLeftContainer:(self.mainContainerView.center.x >= midCenterX) animated:YES];
     }
-    
 }
 
-- (void)closeLeftContainerView:(UIGestureRecognizer *)sender
-{
-    if (sender.state != UIGestureRecognizerStateEnded)
+- (void)closeLeftContainerView:(UIGestureRecognizer *)sender {
+    if (sender.state != UIGestureRecognizerStateEnded) {
         return;
+    }
     [self showLeftContainer:NO animated:YES];
 }
 
-- (void)updatePivotStatus
-{
+- (void)updatePivotStatus {
     self.pivotView.hidden = !self.interactiveShowGestureRecognizerEnable;
 }
 
-- (void)defaultParameters
-{
+- (void)defaultParameters {
     self.interactiveShowGestureRecognizerEnable = YES;
 }
 

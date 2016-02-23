@@ -102,12 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				3146659C1C3ECACC00548493 /* PodFiles */,
+				3146656F1C3ECA2300548493 /* Supporting Files */,
 				314665721C3ECA2300548493 /* AppDelegate.h */,
 				314665731C3ECA2300548493 /* AppDelegate.m */,
 				314665751C3ECA2300548493 /* Assets.xcassets */,
-				314665771C3ECA2300548493 /* LaunchScreen.storyboard */,
 				3146657A1C3ECA2300548493 /* Info.plist */,
-				3146656F1C3ECA2300548493 /* Supporting Files */,
+				314665771C3ECA2300548493 /* LaunchScreen.storyboard */,
 			);
 			path = JRTLeftSliderController;
 			sourceTree = "<group>";
@@ -117,14 +117,14 @@
 			children = (
 				314665701C3ECA2300548493 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		314665821C3ECA2300548493 /* JRTLeftSliderControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				314665831C3ECA2300548493 /* JRTLeftSliderControllerTests.m */,
 				314665851C3ECA2300548493 /* Info.plist */,
+				314665831C3ECA2300548493 /* JRTLeftSliderControllerTests.m */,
 			);
 			path = JRTLeftSliderControllerTests;
 			sourceTree = "<group>";
@@ -132,8 +132,8 @@
 		3146658D1C3ECA2300548493 /* JRTLeftSliderControllerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3146658E1C3ECA2300548493 /* JRTLeftSliderControllerUITests.m */,
 				314665901C3ECA2300548493 /* Info.plist */,
+				3146658E1C3ECA2300548493 /* JRTLeftSliderControllerUITests.m */,
 			);
 			path = JRTLeftSliderControllerUITests;
 			sourceTree = "<group>";
@@ -322,6 +322,7 @@
 				314665781C3ECA2300548493 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
