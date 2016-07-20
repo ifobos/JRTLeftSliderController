@@ -83,6 +83,7 @@ CGFloat const kLeftContentWidth = 270;
     [super viewDidLoad];
     [self setUpContainers];
     [self setUpShowGesture];
+    [self setUpStyle];
 }
 
 #pragma mark - SetUp
@@ -103,6 +104,11 @@ CGFloat const kLeftContentWidth = 270;
     [self updatePivotStatus];
 }
 
+- (void)setUpStyle {
+    self.mainContainerView.layer.shadowOffset = CGSizeMake(-2, 0);
+    self.mainContainerView.layer.shadowOpacity = 0.05;
+}
+
 #pragma mark - Helpers
 
 - (void)addChildViewController:(UIViewController *)childController toContainerView:(UIView *)containerView {
@@ -117,9 +123,10 @@ CGFloat const kLeftContentWidth = 270;
     {
         CGFloat xPosition = 0;
         CGFloat pivotWidth = 8;
+        
         if (displace) {
             xPosition = kLeftContentWidth;
-            pivotWidth = 44;
+            pivotWidth = self.mainContainerView.frame.size.width - kLeftContentWidth;
         }
         
         self.leadingMainContainerConstraint.constant = xPosition;
@@ -128,7 +135,10 @@ CGFloat const kLeftContentWidth = 270;
         
         [self.mainContainerView layoutIfNeeded];
         [self.pivotView layoutIfNeeded];
+        
     };
+    
+    [self.view endEditing:YES];
     
     if (animated) {
         [UIView animateWithDuration:0.2 animations:^
