@@ -119,8 +119,7 @@ CGFloat const kLeftContentWidth = 270;
 }
 
 - (void)showLeftContainer:(BOOL)show animated:(BOOL)animated {
-    void (^showBlock) (BOOL displace) = ^void (BOOL displace)
-    {
+    void (^showBlock) (BOOL displace) = ^void (BOOL displace) {
         CGFloat xPosition = 0;
         CGFloat pivotWidth = 8;
         
@@ -133,16 +132,15 @@ CGFloat const kLeftContentWidth = 270;
         self.LeadingPivotViewConstraint.constant = xPosition;
         self.widthPivotViewConstraint.constant = pivotWidth;
         
-        [self.mainContainerView layoutIfNeeded];
-        [self.pivotView layoutIfNeeded];
+        [self.view setNeedsLayout];
+        [self.view layoutIfNeeded];
         
     };
     
     [self.view endEditing:YES];
     
     if (animated) {
-        [UIView animateWithDuration:0.2 animations:^
-        {
+        [UIView animateWithDuration:0.2 animations:^ {
             showBlock(show);
         }];
     }
