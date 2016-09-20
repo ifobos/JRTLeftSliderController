@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "JRTLeftSliderController.h"
+#import "ExampleRightViewController.h"
+#import "ExampleLeftViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     JRTLeftSliderController *leftSliderController = [JRTLeftSliderController new];
-    leftSliderController.leftViewController = [UIViewController new];
-    leftSliderController.leftViewController.view.backgroundColor = [UIColor blueColor];
-    leftSliderController.mainViewController = [UIViewController new];
-    leftSliderController.mainViewController.view.backgroundColor = [UIColor redColor];
+    leftSliderController.leftViewController = [ExampleLeftViewController new];
+    leftSliderController.mainViewController = [ExampleRightViewController new];
     leftSliderController.interactiveShowGestureRecognizerEnable = YES;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0e9 * 3), dispatch_get_main_queue(), ^(void) {

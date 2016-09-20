@@ -15,6 +15,10 @@
 		3146658F1C3ECA2300548493 /* JRTLeftSliderControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146658E1C3ECA2300548493 /* JRTLeftSliderControllerUITests.m */; };
 		314665A01C3ECACC00548493 /* JRTLeftSliderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146659E1C3ECACC00548493 /* JRTLeftSliderController.m */; };
 		314665A11C3ECACC00548493 /* JRTLeftSliderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3146659F1C3ECACC00548493 /* JRTLeftSliderController.xib */; };
+		3177FCE91D91B2A600E88DE8 /* ExampleRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3177FCE71D91B2A600E88DE8 /* ExampleRightViewController.m */; };
+		3177FCEA1D91B2A600E88DE8 /* ExampleRightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3177FCE81D91B2A600E88DE8 /* ExampleRightViewController.xib */; };
+		3177FCEE1D91B69E00E88DE8 /* ExampleLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3177FCEC1D91B69E00E88DE8 /* ExampleLeftViewController.m */; };
+		3177FCEF1D91B69E00E88DE8 /* ExampleLeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3177FCED1D91B69E00E88DE8 /* ExampleLeftViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		3146659D1C3ECACC00548493 /* JRTLeftSliderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTLeftSliderController.h; sourceTree = "<group>"; };
 		3146659E1C3ECACC00548493 /* JRTLeftSliderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTLeftSliderController.m; sourceTree = "<group>"; };
 		3146659F1C3ECACC00548493 /* JRTLeftSliderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTLeftSliderController.xib; sourceTree = "<group>"; };
+		3177FCE61D91B2A600E88DE8 /* ExampleRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleRightViewController.h; sourceTree = "<group>"; };
+		3177FCE71D91B2A600E88DE8 /* ExampleRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleRightViewController.m; sourceTree = "<group>"; };
+		3177FCE81D91B2A600E88DE8 /* ExampleRightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleRightViewController.xib; sourceTree = "<group>"; };
+		3177FCEB1D91B69E00E88DE8 /* ExampleLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleLeftViewController.h; sourceTree = "<group>"; };
+		3177FCEC1D91B69E00E88DE8 /* ExampleLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleLeftViewController.m; sourceTree = "<group>"; };
+		3177FCED1D91B69E00E88DE8 /* ExampleLeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleLeftViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +118,12 @@
 				314665751C3ECA2300548493 /* Assets.xcassets */,
 				3146657A1C3ECA2300548493 /* Info.plist */,
 				314665771C3ECA2300548493 /* LaunchScreen.storyboard */,
+				3177FCE61D91B2A600E88DE8 /* ExampleRightViewController.h */,
+				3177FCE71D91B2A600E88DE8 /* ExampleRightViewController.m */,
+				3177FCE81D91B2A600E88DE8 /* ExampleRightViewController.xib */,
+				3177FCEB1D91B69E00E88DE8 /* ExampleLeftViewController.h */,
+				3177FCEC1D91B69E00E88DE8 /* ExampleLeftViewController.m */,
+				3177FCED1D91B69E00E88DE8 /* ExampleLeftViewController.xib */,
 			);
 			path = JRTLeftSliderController;
 			sourceTree = "<group>";
@@ -215,6 +231,7 @@
 				TargetAttributes = {
 					3146656B1C3ECA2300548493 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = FH445SE57B;
 					};
 					3146657E1C3ECA2300548493 = {
 						CreatedOnToolsVersion = 7.2;
@@ -251,8 +268,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3177FCEA1D91B2A600E88DE8 /* ExampleRightViewController.xib in Resources */,
 				314665A11C3ECACC00548493 /* JRTLeftSliderController.xib in Resources */,
 				314665761C3ECA2300548493 /* Assets.xcassets in Resources */,
+				3177FCEF1D91B69E00E88DE8 /* ExampleLeftViewController.xib in Resources */,
 				314665791C3ECA2300548493 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3177FCE91D91B2A600E88DE8 /* ExampleRightViewController.m in Sources */,
+				3177FCEE1D91B69E00E88DE8 /* ExampleLeftViewController.m in Sources */,
 				314665741C3ECA2300548493 /* AppDelegate.m in Sources */,
 				314665A01C3ECACC00548493 /* JRTLeftSliderController.m in Sources */,
 				314665711C3ECA2300548493 /* main.m in Sources */,
@@ -412,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FH445SE57B;
 				INFOPLIST_FILE = JRTLeftSliderController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerti.JRTLeftSliderController;
@@ -423,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FH445SE57B;
 				INFOPLIST_FILE = JRTLeftSliderController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerti.JRTLeftSliderController;

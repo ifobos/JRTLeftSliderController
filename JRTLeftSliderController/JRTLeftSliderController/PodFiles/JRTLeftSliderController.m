@@ -140,8 +140,12 @@ CGFloat const kLeftContentWidth = 270;
     [self.view endEditing:YES];
     
     if (animated) {
+        self.leftContainerView.userInteractionEnabled = NO;
+        self.mainContainerView.userInteractionEnabled = NO;
         [UIView animateWithDuration:0.2 animations:^ {
             showBlock(show);
+            self.leftContainerView.userInteractionEnabled = YES;
+            self.mainContainerView.userInteractionEnabled = YES;
         }];
     }
     else {
